@@ -9,9 +9,10 @@
 </head>
 
 <body>
-    <header class="">
+    <header class=""></header>
+    
         <nav
-            class="flex justify-between items-center bg-gradient-to-r from-cyan-500 to-blue-500 min-h-[10vh] px-[50px]">
+            class="flex justify-between px-[10px] items-center bg-gradient-to-r from-cyan-500 to-blue-500 min-h-[10vh] ">
             <!-- Este es el logo de la pagina web -->
             <div class="flex flex-row items-center text-3xl text-(0.55 0.16 140.92) ">
                 <img src="img/logo.png" alt="" class="h-[90px]">
@@ -19,19 +20,62 @@
             </div>
             <!-- Este es el nav -->
 
-            <button id="menu-btn" class="md:hidden focus:outline-none">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
+            <button id="menu-btn" class="md:hidden flex flex-col justify-between w-8 h-6 focus:outline-none">
+                <span class="block h-1 bg-white rounded transition-all duration-300"></span>
+                <span class="block h-1 bg-white rounded transition-all duration-300"></span>
+                <span class="block h-1 bg-white rounded transition-all duration-300"></span>
             </button>
 
             <!-- Menu -->
 
+            <div class="hidden md:flex items-center gap-[10px]">
+                <a href="" class="">
+                    <img src="img/campana.png" alt=""
+                        class="h-[30px] transition-all duration-300 hover:shadow-glow hover:-translate-y-1 active:scale-95 disabled:opacity-50">
+                </a>
+                <a href="" class="group flex items-center h-[50px] w-[60px] justify-center relative">
+                    <img src="img/sobre.png" alt="" class="h-[30px]">
+                    <span
+                        class="absolute top-1 right-1 w-[10px] h-[10px] bg-red-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </a>
+                <a href="" class="group h-[50px] w-[60px] flex items-center justify-center p-[12px] relative">
+                    <img src="img/ajustes.png" alt="" class="img/ajustes.png" alt="" class="">
+                    <span class="absolute top-1 right-1 w-[10px] h-[10px] bg-red-600 rounded-full 
+                     opacity-0 group-hover:opacity-100 
+                     transition-opacity duration-300">
+                    </span>
+                </a>
+                <a href="" class="flex justify-center items-center h-[50px] w-[60px]">
+                    <img src="img/usuario.png" alt="" class="h-[30px]">
+                </a>
+            </div>
 
+            <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-500 bg-blue-700">
+                <a href="#" class="block px-4 py-2 hover:bg-blue-800">Inicio</a>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-800">Servicios</a>
+                <a href="#" class="block px-4 py-2 hover:bg-blue-800">Contacto</a>
+            </div>
 
-            <ul class="hidden md:flex justify-center items-center gap-[40px] ">
+            <script>
+                const btn = document.getElementById("menu-btn");
+                const menu = document.getElementById("mobile-menu");
+                const lines = btn.querySelectorAll("span-btn");
+
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("max-h-40");
+                    menu.classList.toggle("max-h-0");
+
+                    lines[0].classList.toggle("rotate-45");
+                    lines[0].classList.toggle("translate-y-2");
+
+                    lines[1].classList.toggle("opacity-0");
+
+                    lines[2].classList.toggle("-rotate-45");
+                    lines[2].classList.toggle("-translate-y-2");
+                });
+            </script>
+
+            <!-- <ul class="hidden md:flex justify-center items-center gap-[40px] ">
                 <li class="">
                     <a href="#" class="">
                         <img src="img/campana.png" alt=""
@@ -51,7 +95,7 @@
                     <a href="#" class="group h-[50px] w-[50px] flex items-center justify-center relative">
                         <img src="img/ajustes.png" alt="" class="h-[30px]">
 
-                        <!-- Puntito que aparece al pasar el mouse -->
+                         
                         <span class="absolute top-1 right-1 w-[10px] h-[10px] bg-red-600 rounded-full 
                      opacity-0 group-hover:opacity-100 
                      transition-opacity duration-300">
@@ -61,7 +105,7 @@
                 <li class=""><a href="#" class=""><img src="img/usuario.png" alt="" class="h-[30px]"></a></li>
             </ul>
 
-            <!-- menu movil -->
+            
             <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
                 <a href="#" class="block py-2">Inicio</a>
                 <a href="#" class="block py-2">Servicios</a>
@@ -76,7 +120,7 @@
                 btn.addEventListener("click", () => {
                     mobileMenu.classList.toggle("hidden");
                 });
-            </script>
+            </script> -->
 
         </nav>
 
@@ -101,7 +145,7 @@
 
 
 
-    </header>
+    
     <main class="">
         <div class="">
             <section class=""></section>
