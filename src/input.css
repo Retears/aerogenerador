@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "minit";
+    src: url("../font/Fredoka/Fredoka-VariableFont_wdth\,wght.ttf");
+}
+
+@theme {
+    --font-minit: "minit";
+}

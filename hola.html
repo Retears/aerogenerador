@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body>
+    <header>
+        <!DOCTYPE html>
+        <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+
+        <body class="bg-gray-100">
+
+            <nav class="bg-blue-600 text-white">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex justify-between items-center h-16">
+
+                        <!-- Logo -->
+                        <div class="text-xl font-bold">
+                            MiSitio
+                        </div>
+
+                        <!-- Botón Hamburguesa -->
+                        <button id="menu-btn"
+                            class="md:hidden flex flex-col justify-between w-8 h-6 focus:outline-none">
+                            <span class="block h-1 bg-white rounded transition-all duration-300"></span>
+                            <span class="block h-1 bg-white rounded transition-all duration-300"></span>
+                            <span class="block h-1 bg-white rounded transition-all duration-300"></span>
+                        </button>
+
+                        <!-- Menú Desktop -->
+                        <div class="hidden md:flex space-x-6">
+                            <a href="#" class="hover:text-gray-200">Inicio</a>
+                            <a href="#" class="hover:text-gray-200">Servicios</a>
+                            <a href="#" class="hover:text-gray-200">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú móvil animado -->
+                <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-500 bg-blue-700">
+                    <a href="#" class="block px-4 py-2 hover:bg-blue-800">Inicio</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-blue-800">Servicios</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-blue-800">Contacto</a>
+                </div>
+            </nav>
+
+            <script>
+                const btn = document.getElementById("menu-btn");
+                const menu = document.getElementById("mobile-menu");
+                const lines = btn.querySelectorAll("span");
+
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("max-h-40");
+                    menu.classList.toggle("max-h-0");
+
+                    lines[0].classList.toggle("rotate-45");
+                    lines[0].classList.toggle("translate-y-2");
+
+                    lines[1].classList.toggle("opacity-0");
+
+                    lines[2].classList.toggle("-rotate-45");
+                    lines[2].classList.toggle("-translate-y-2");
+                });
+            </script>
+
+        </body>
+
+        </html>
+
+
+    </header>
+
+
+</body>
+
+</html>
